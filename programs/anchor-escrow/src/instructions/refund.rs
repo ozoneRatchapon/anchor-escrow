@@ -51,7 +51,7 @@ pub struct Refund<'info> {
     pub system_program: Program<'info, System>,
 }
 
-impl<'info> Refund<'info> {
+impl Refund<'_> {
     pub fn refund_and_close_vault(&mut self) -> Result<()> {
         let signer_seeds: [&[&[u8]]; 1] = [&[
             b"escrow",

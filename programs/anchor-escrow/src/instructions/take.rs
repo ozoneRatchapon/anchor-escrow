@@ -61,7 +61,7 @@ pub struct Take<'info> {
     pub system_program: Program<'info, System>,
 }
 
-impl<'info> Take<'info> {
+impl Take<'_> {
     pub fn deposit(&mut self) -> Result<()> {
         let transfer_accounts = TransferChecked {
             from: self.taker_ata_b.to_account_info(),

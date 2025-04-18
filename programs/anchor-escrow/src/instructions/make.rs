@@ -49,7 +49,7 @@ pub struct Make<'info> {
     pub system_program: Program<'info, System>,
 }
 
-impl<'info> Make<'info> {
+impl Make<'_> {
     pub fn init_escrow(&mut self, seed: u64, receive: u64, bumps: &MakeBumps) -> Result<()> {
         self.escrow.set_inner(Escrow {
             seed,
